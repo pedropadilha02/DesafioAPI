@@ -26,7 +26,7 @@ const BookCard = ({
       />
       <CardBody>
         <CardTitle className='card-title'>{title}</CardTitle>
-        <Button onClick={toggle}>More info</Button>
+        <Button onClick={toggle}>Mais sobre</Button>
       </CardBody>
       <Modal isOpen={modal} toggle={toggle}>
         <div className='modal-header d-flex justify-content-center'>
@@ -46,11 +46,11 @@ const BookCard = ({
           <div className='d-flex justify-content-between ml-3'>
             <img src={thumbnail} alt={title} style={{ height: '233px' }} />
             <div>
-              <p>Page Count: {pageCount}</p>
-              <p>Language: {language}</p>
-              <p>Authors: {authors}</p>
-              <p>Publisher: {publisher}</p>
-              <p>Published Date: {publishedDate}</p>
+              <p>Páginas: {pageCount}</p>
+              <p>Idioma: {language}</p>
+              <p>Autor: {authors}</p>
+              <p>Editora: {publisher}</p>
+              <p>Data de publicação: {publishedDate}</p>
             </div>
           </div>
           <div className='mt-3'>{description}</div>

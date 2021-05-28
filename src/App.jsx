@@ -1,15 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {
-  InputGroup,
-  Input,
-  InputGroupAddon,
-  Button,
-  FormGroup,
-  Label,
-  Spinner
-} from 'reactstrap';
-import { ToastContainer, toast } from 'react-toastify';
+import {InputGroup, Input, InputGroupAddon, Button, FormGroup, Label, Spinner} from 'reactstrap';
+import {ToastContainer, toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import axios from 'axios';
 import BookCard from './BookCard.jsx';
@@ -24,17 +16,12 @@ function App() {
   const handleSubmit = () => {
     setLoading(true);
     if (maxResults > 40 || maxResults < 1) {
-      toast.error('max results must be between 1 and 40');
+      toast.error('Resultado maximo deve ser entre 1 e 40');
     } else {
-      axios
-        .get(
-          `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResults}&startIndex=${startIndex}`
-        )
+      axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxResults}&startIndex=${startIndex}`)
         .then(res => {
           if (startIndex >= res.data.totalItems || startIndex < 1) {
-            toast.error(
-              `max reults must be between 1 and ${res.data.totalItems}`
-            );
+            toast.error(`Resultado de pesquisa de ver entre 1 e ${res.data.totalItems}`);
           } else {
             if (res.data.items.length > 0) {
               setCards(res.data.items);
@@ -58,12 +45,12 @@ function App() {
           className='display-2 text-center text-white mb-3'
           style={{ zIndex: 2 }}
         >
-          Google Books
+          Desafio Books API
         </h1>
         <div style={{ width: '60%', zIndex: 2 }}>
           <InputGroup size='lg' className='mb-3'>
             <Input
-              placeholder='Book Search'
+              placeholder='Pesquisa'
               value={query}
               onChange={e => setQuery(e.target.value)}
             />
@@ -75,7 +62,7 @@ function App() {
           </InputGroup>
           <div className='d-flex text-white justify-content-center'>
             <FormGroup >
-              <Label for='maxResults'>Max Results</Label>
+              <Label for='maxResults'>Resultados Maximos</Label>
               <Input
                 type='number'
                 id='maxResults'
@@ -85,7 +72,7 @@ function App() {
               />
             </FormGroup>
             <FormGroup className='ml-5'>
-              <Label for='startIndex'>Start Index</Label>
+              <Label for='startIndex'>Começar por</Label>
               <Input
                 type='number'
                 id='startIndex'
