@@ -1,13 +1,19 @@
 import React, {useState} from 'react';
 import './App.css';
 import {InputGroup, Input, InputGroupAddon, Button, FormGroup, Label} from 'reactstrap'
+import 'react-toastify/dist/ReactToastify.css';
+import {ToastContainer, toastContainer, tost} from 'react-toastify'
 function App() {
   // States
   const [maxResults, setMaxResults] = useState(10)
   const [startIndex, setStartIndex] = useState(1)
   const [query, setQuery] = useState('');
+  const [loading, setLoading] = useState(false)
   //Handle Search
-  
+  const handleSubmit = () => {
+    setLoading(true)
+    
+  }
   // Main Show Case
   const mainHeader = () => {
     return (
@@ -56,7 +62,10 @@ function App() {
       </div>
     );
   };
-  return <div>{mainHeader()}</div>;
+  return <div>{
+    mainHeader()
+    <ToastContainer />
+    }</div>;
 }
 
 export default App;
