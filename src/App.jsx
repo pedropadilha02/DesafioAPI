@@ -95,25 +95,35 @@ function App() {
   };
 
   const handleCards = () => {
-    console.log(cards)
-    const items = cards.map ((item, i) => {
+    console.log(cards);
+    const items = cards.map((item, i) => {
       let thumbnail = '';
-      if(item.volumeinfo.imageLinks.thumbnail){
-        thumbnail = item.volumeinfo.imageLinks.thumbnail;
+      if(item.volumeInfo.imageLinks.thumbnail){
+        thumbnail = item.volumeInfo.imageLinks.thumbnail;
       }
 
       return(
         <div className="col-lg-4" key={ item.id } >
-          <BookCard thumbnail={ thumbnail}/>
+          <BookCard
+            thumbnail = {thumbnail}
+            title = {item.volumeInfo.title}
+            pageCount = {item.volumeInfo.pageCount}
+            language = {item.volumeInfo.language}
+            authors = {item.volumeInfo.authors}
+            publisher = {item.volumeInfo.publisher}
+            description = {item.volumeInfo.description}
+            previewLink = {item.volumeInfo.previewLink}
+            infoLink = {item.volumeInfo.infoLink}
+          />  
         </div>
-      )
-    })
+      );
+    });
     if(loading) {
       return(
         <div className='d-flex justify-content-center mt-3' >
-          <Spinner style={{width: '3rem', height: '3rem' }}/>
+          <Spinner style={{ width: '3rem', height: '3rem' }} />
         </div>
-      ) 
+      );
       } else {
         return(
           <div className='container my-5'>
