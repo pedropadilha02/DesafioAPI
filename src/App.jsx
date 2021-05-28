@@ -62,7 +62,7 @@ function App() {
           </InputGroup>
           <div className='d-flex text-white justify-content-center'>
             <FormGroup >
-              <Label for='maxResults'>Resultados Maximos</Label>
+              <Label for='maxResults'>Máximo</Label>
               <Input
                 type='number'
                 id='maxResults'
