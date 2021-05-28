@@ -46,27 +46,13 @@ const BookCard = ({thumbnail, title, pageCount, language, description, authors, 
         </div>
         <div className='modal-footer'>
           <div className='left-silde'>
-            <a
-              href={previewLink}
-              className='btn-link'
-              color='default'
-              type='button'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
+            <a href={previewLink} className='btn-link' color='default' type='button' target='_blank' rel='noopener noreferrer'>
               Preview Link
             </a>
           </div>
           <div className='divider'></div>
           <div className='right-silde'>
-            <a
-              href={infoLink}
-              className='btn-link'
-              color='default'
-              type='button'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
+            <a href={infoLink} className='btn-link' color='default' type='button' target='_blank' rel='noopener noreferrer'>
               Info Link
             </a>
           </div>

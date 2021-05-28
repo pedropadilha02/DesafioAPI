@@ -55,7 +55,7 @@ function App() {
               onChange={e => setQuery(e.target.value)}
             />
             <InputGroupAddon addonType='append'>
-              <Button color='secondary' onClick={handleSubmit}>
+              <Button size='lg' color='secondary' onClick={handleSubmit}>
                 <i className='fas fa-search'></i>
               </Button>
             </InputGroupAddon>
